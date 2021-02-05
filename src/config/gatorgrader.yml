@@ -1,0 +1,31 @@
+---
+name: cmpsc-100-week-extra-credit
+break: true
+indent: 4
+---
+
+bonanza:
+    ConfirmFileExists
+    MatchFileFragment --fragment "$" --count 1
+
+Key.py:
+    ConfirmFileExists
+
+Lock.py:
+    ConfirmFileExists
+
+Safe.py:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileFragment --fragment "self.lock.pick(key)" --count 1 --exact
+    MatchFileFragment --fragment "self.is_cracked" --count 2
+
+main.py:
+    ConfirmFileExists
+    MatchFileFragment --fragment "Key(" --count 1
+    MatchFileFragment --fragment "Safe()" --count 1
+    MatchFileFragment --fragment "for " --count 1
+    MatchFileFragment --fragment ".crack(" --count 1
+    MatchFileFragment --fragment ".is_cracked" --count 1
+
+ExecuteCommand --command "python3 main.py"
