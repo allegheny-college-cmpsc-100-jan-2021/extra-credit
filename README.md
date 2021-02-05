@@ -1,4 +1,4 @@
-# CMPSC 100: January 2021, Extra Credit
+# CMPSC 100: Jan 2021, Extra Credit
 
 * Distributed: 5 February 2021
 * Due: 11 February 2021
